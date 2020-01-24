@@ -1,0 +1,54 @@
+<h1> Farmer Instruments </h1>
+<table>
+    <tr>
+        <th>Farmer id</th>
+        <th>Instrument id</th>
+        <th>Farmer name</th>
+        <th>Deposit</th>
+        <th>Rent/hour</th>
+        <th>View instruments</th>
+        <th>Edit instruments</th>
+        <th>Delete instruments</th>
+    </tr>
+    <% @ads.each do |ad| %>
+        <tr>
+            <td> <%= ad.farmer_id %> </td>
+            <td> <%= ad.instrument_id%> </td>
+            <td> <%= ad.farmer.full_name%> </td>
+            <td> <%= ad.deposit%> </td>
+            <td> <%= ad.rent_per_hour%> </td>
+            <td> <%= link_to "View", farmer_instrument_path(ad.id)%> </td>
+            <td> <%= link_to 'Edit', edit_farmer_instrument_path(ad.id) %> </td>
+            <td> <%= link_to 'Delete', farmer_instrument_path(ad.id), :method => :delete %> </td>
+        </tr>
+    <% end %>   
+</table> 
+
+<br><br><br>
+
+<h1>Rental Information</h1>
+<table>
+    <tr>
+        <th>Farmer Name</th>
+        <th>Owned Instrument Count</th>
+        <th>Borrowed Instrument Count</th>
+    </tr>
+    <% @farmer.all.order("first_name").each do |ad| %>
+        <tr>
+        <td><%= ad.full_name %></td>
+        <td><%= ad.farmer_instruments.count %></td>
+        <td><%= ad.rents.count %></td>
+        </tr>
+    <% end %>
+</table>
+
+<%= link_to "Add Advertisement details", new_farmer_instrument_path%>
+
+
+
+
+
+
+
+
+  

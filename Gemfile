@@ -3,6 +3,30 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+# to format the output by me
+gem "hirb"
+# to use materialize added by me
+gem "materialize-sass"
+
+gem 'bootstrap-datepicker-rails'
+
+gem 'rspec_api_documentation'
+
+group :test do
+  gem 'simplecov', require: false
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.6'
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+end
+
+
+gem 'jquery-ui-rails'
+
+gem 'material_icons'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 # Use sqlite3 as the database for Active Record
@@ -39,6 +63,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~>3.6'
+  gem 'factory_bot'
+  gem 'rails-controller-testing'
+
 end
 
 group :development do

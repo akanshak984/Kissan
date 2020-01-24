@@ -1,0 +1,23 @@
+<h1> Details </h1>
+<table>
+    <tr>
+        <th>Farmer name</th>
+        <th>Mobile number</th>
+        <th>Email</th>
+        <th>Name of Instrument</th>
+        <th>Brand</th>
+        <th>Address</th>
+        <th>Available from</th>
+        <th>Available to</th>
+    </tr>
+    <tr>
+        <td> <%= @farmer.full_name%> </td>
+        <td> <%= @farmer.mobile_number%> </td>
+        <td> <%= @farmer.email%> </td>
+        <td> <%= @instrument.instrument_name%> </td>
+        <td> <%= @instrument.brand%> </td>
+        <td> <%= @address.country%> </td>
+        <td> <%= @ad.available_from_date%> </td>
+        <td> <%= @ad.available_to_date%> </td>
+    </tr>
+</table> 
